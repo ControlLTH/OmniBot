@@ -1,0 +1,23 @@
+#!/bin/bash
+
+USERNAME=pi
+HOST=130.235.83.216
+echo "ssh-password for $USERNAME@$HOST"
+read PASSWORD
+
+echo 'name of trajectory-file?'
+read FILENAME
+
+FILELOCATION="~/PlanningLab"
+echo "Copying $FILENAME to $USERNAME@$HOST:$FILELOCATION"
+sshpass -p $PASSWORD scp $FILENAME "$USERNAME@$HOST:$FILELOCATION"
+
+echo "Executing trajectory"
+COMMAND="cd $FILELOCATION ; source planning_env/bin/activate ; python track_path.py $FILENAME ; rm $FILENAME ; exit"
+sshpass -p $PASSWORD ssh -o StrictHostKeyChecking=no $USERNAME@$HOST "$COMMAND"
+
+#scp "-i $PASSWORD" $FILENAME "$USERNAME@$HOST:$FILELOCATION"
+#"$PASSWORD"
+#SCRIPT="pwd; cd PlanningLab ; source planning-env/bin/activate ; python track_path.py $FILENAME"
+#scp -l $FILENAME $USERNAME $HOST  
+#ssh -o StrictHostKeyChecking=no -l username hostname "pwd; ls"

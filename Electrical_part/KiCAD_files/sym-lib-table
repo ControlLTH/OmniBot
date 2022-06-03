@@ -1,0 +1,6 @@
+(sym_lib_table
+  (lib (name "USB1035-XX-X-X-X-B_REVE")(type "Legacy")(uri "${KIPRJMOD}/Lib/Double_USB_A/USB1035-XX-X-X-X-B_REVE.lib")(options "")(descr ""))
+  (lib (name "100SP1T1B4M2QE")(type "Legacy")(uri "${KIPRJMOD}/Lib/Switch/100SP1T1B4M2QE.lib")(options "")(descr ""))
+  (lib (name "EEEFK2A331AM")(type "Legacy")(uri "${KIPRJMOD}/Lib/CAP330/EEEFK2A331AM.lib")(options "")(descr ""))
+  (lib (name "EEEFK1A222AQ")(type "Legacy")(uri "${KIPRJMOD}/Lib/CAP2200/EEEFK1A222AQ.lib")(options "")(descr ""))
+)
